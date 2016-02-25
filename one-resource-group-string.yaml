@@ -1,0 +1,13 @@
+heat_template_version: 2013-05-23
+description: Resource Group to test strings passed to list props
+parameters:
+  MyFirstPotato: {default: '8:8000',  type: string}
+resources:
+  MyResourceGroup:
+    type: OS::Heat::ResourceGroup
+    properties:
+      count: 1
+      resource_def:
+        properties:
+          MyPotato: {get_param: MyFirstPotato}
+        type: One::Resource

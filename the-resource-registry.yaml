@@ -1,0 +1,6 @@
+resource_registry:
+  One::Resource::String: one-resource-string.yaml
+  One::Resource::List: one-resource-list.yaml
+
+#  One::Resource::String: /share/test-templates/comma-delim-bz/one-resource-string.yaml
+#  One::Resource::List: /share/test-templates/comma-delim-bz/one-resource-list.yaml

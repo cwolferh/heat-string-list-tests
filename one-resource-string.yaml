@@ -1,0 +1,19 @@
+heat_template_version: 2013-05-23
+
+description: Test template to create one instance.
+
+parameters:
+  MyPotato: {default: '1:1000', type: string}
+
+resources:
+  test1:
+    type: OS::Heat::TestResource
+    properties:
+      value: {get_param: MyPotato}
+      fail: False
+      update_replace: False
+      wait_secs: 0
+      action_wait_secs:
+        create: 1
+      client_name: nova
+      entity_name: servers

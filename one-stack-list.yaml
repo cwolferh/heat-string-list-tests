@@ -1,0 +1,12 @@
+heat_template_version: 2013-05-23
+
+description: Test template to create one instance.
+
+parameters:
+  MyPotato: {default: ['4:4000'], type: comma_delimited_list}
+
+resources:
+  test1:
+    type: One::Resource
+    properties:
+      MyPotato: {get_param: MyPotato}

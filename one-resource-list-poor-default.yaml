@@ -1,0 +1,27 @@
+heat_template_version: 2013-05-23
+
+description: Test template to create one instance.
+
+parameters:
+  MyPotato: {default: '5:55555', type: comma_delimited_list}
+
+resources:
+  test1:
+    type: OS::Heat::TestResource
+    properties:
+      value:
+        str_replace:
+          params:
+            RANGES:
+              list_join:
+              - ''','''
+              - {get_param: MyPotato}
+          template: '[''RANGES'']'
+#       list_join: [',', {get_param: MyPotato}]
+      fail: False
+      update_replace: False
+      wait_secs: 0
+      action_wait_secs:
+        create: 1
+      client_name: nova
+      entity_name: servers
