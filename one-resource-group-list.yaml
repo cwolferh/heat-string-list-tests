@@ -1,7 +1,7 @@
 heat_template_version: 2013-05-23
 description: Resource Group to test strings passed to list props
 parameters:
-  MyFirstPotato: {default: ['9:9000'], comma_delimited_list}
+  MyFirstPotato: {default: ['9:9000'], type: comma_delimited_list}
 resources:
   MyResourceGroup:
     type: OS::Heat::ResourceGroup

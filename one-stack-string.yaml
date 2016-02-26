@@ -10,3 +10,4 @@ resources:
     type: One::Resource
     properties:
       MyPotato: {get_param: MyPotato}
+#     MyPotato: {get_param: MyPotato, type: string} -- results in an error, but seems to be a different issue
